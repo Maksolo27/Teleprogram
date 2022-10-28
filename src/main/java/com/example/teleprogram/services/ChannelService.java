@@ -24,8 +24,5 @@ public class ChannelService {
         return channelRepository.getChanelById (id);
     }
 
-    @Bean
-    public ChannelRepository getChannelRepository () {
-        return channelRepository;
-    }
+
 }
