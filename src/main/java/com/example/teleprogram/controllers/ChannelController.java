@@ -50,6 +50,8 @@ public class ChannelController {
 
     @GetMapping("/viewer")
     public String viewerSite(){return "viewerSite";}
+    @GetMapping("/admin")
+    public String adminSite(){return "adminSite";}
 
     @GetMapping("/tvprogramm")
     public String viewProgramm(Model model){
@@ -67,6 +69,12 @@ public class ChannelController {
     public String sortChannels(Model model) {
         model.addAttribute("sorted",viewerService.sortChannels());
         return "alphabetSort";
+    }
+
+    @GetMapping("/admtvprogramm")
+    public String viewProgrammsByAdmin(Model model) {
+        model.addAttribute("programm",adminService.showProgramm());
+        return "adminTVProgramm";
     }
 
 }
