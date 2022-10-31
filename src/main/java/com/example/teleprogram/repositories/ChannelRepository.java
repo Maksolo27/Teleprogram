@@ -13,9 +13,9 @@ public class ChannelRepository {
 
 
     public ChannelRepository () {
-        channels.add (new Channel (0L, "Chanel1", "abc"));
-        channels.add (new Channel (1L, "Chanel2", "bcd"));
-        channels.add (new Channel (2L, "Chanel3", "zgh"));
+        channels.add (new Channel (0L, "ICTV", "films"));
+        channels.add (new Channel (1L, "STB", "housewife programms"));
+        channels.add (new Channel (2L, "Football 1", "sport"));
     }
 
 
@@ -26,5 +26,6 @@ public class ChannelRepository {
     public Channel getChanelById(long id) {
         return channels.get ((int) id);
     }
+    public int getSize(){return  channels.size();}
 
 }

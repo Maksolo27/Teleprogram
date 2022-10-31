@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style> body {background-color: navajowhite }
+    </style>
+</head>
+<body>
+
+<tr th:each="chanel: ${channel}">
+    <td th:text="${chanel}" />
+    <br>
+</tr>
+<form action="alphabet">
+    <input type = "submit" value="Сортувати канали за алфавітом">
+</form>
+<form action="viewer">
+    <input type = "submit" value="Назад">
+    </form>
+</body>
+</html>

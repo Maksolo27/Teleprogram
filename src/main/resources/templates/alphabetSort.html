@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style> body {background-color: navajowhite }
+  </style>
+</head>
+<body>
+<tr th:each="channel: ${sorted}">
+    <td th:text="${channel}" />
+    <br>
+</tr>
+<form action="/menu">
+    <input type = "submit" value="Назад">
+</form>
+</body>
+</html>

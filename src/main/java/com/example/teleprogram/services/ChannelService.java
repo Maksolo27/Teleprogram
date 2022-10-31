@@ -24,5 +24,6 @@ public class ChannelService {
         return channelRepository.getChanelById (id);
     }
 
+    public int getSize(){return channelRepository.getSize();}
 
 }
