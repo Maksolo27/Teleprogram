@@ -11,10 +11,18 @@ import java.util.List;
 
 @Service
 public class ViewerService {
-    @Autowired
+
     private ChannelRepository channelRepository;
-    @Autowired
     private TVProgrammRepository tvProgrammRepository;
+    @Autowired
+    public void setChannelRepository(ChannelRepository channelRepository) {
+        this.channelRepository = channelRepository;
+    }
+    @Autowired
+    public void setTvProgrammRepository(TVProgrammRepository tvProgrammRepository) {
+        this.tvProgrammRepository = tvProgrammRepository;
+    }
+
 
     public List<String> showChannels(){
         List<String> channels = new ArrayList<>();

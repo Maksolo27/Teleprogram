@@ -12,7 +12,6 @@ import java.util.GregorianCalendar;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Scope("singleton")
 public class Teleprogram {
 
 

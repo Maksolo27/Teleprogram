@@ -25,4 +25,8 @@ public class AdminService {
         return programms;
     }
 
+    public void editProg(long id, String string){
+        tvProgrammRepository.getProgrammById(id).setDescription(string);
+    }
+
 }

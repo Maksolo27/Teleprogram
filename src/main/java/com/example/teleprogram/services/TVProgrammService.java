@@ -9,8 +9,11 @@ import java.util.List;
 
 @Service
 public class TVProgrammService {
-    @Autowired
     private TVProgrammRepository tvProgrammRepository;
+    @Autowired
+    public TVProgrammService(TVProgrammRepository tvProgrammRepository) {
+        this.tvProgrammRepository = tvProgrammRepository;
+    }
 
     public List<Teleprogram> getAllProgram () {return tvProgrammRepository.getAllProgram();}
 
@@ -19,4 +22,6 @@ public class TVProgrammService {
     }
 
     public int getSize(){return tvProgrammRepository.getSize();}
+
+
 }
