@@ -1,14 +1,12 @@
 package com.example.teleprogram.repositories;
 
 import com.example.teleprogram.entities.Teleprogram;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-@Scope("singletone")
 public class TVProgrammRepository {
     private final List<Teleprogram> programms = new ArrayList<>();
 
