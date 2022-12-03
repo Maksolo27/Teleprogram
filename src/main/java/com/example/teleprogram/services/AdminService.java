@@ -2,12 +2,14 @@ package com.example.teleprogram.services;
 
 import com.example.teleprogram.repositories.TVProgrammRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Scope("singleton")
 public class AdminService {
 
     @Autowired
