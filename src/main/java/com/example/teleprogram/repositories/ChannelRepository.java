@@ -5,11 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class ChannelRepository {
 
-    private final List<Channel> channels = new ArrayList<> ();
+    private List<Channel> channels = new ArrayList<> ();
 
 
     public ChannelRepository () {
@@ -27,5 +28,22 @@ public class ChannelRepository {
         return channels.get ((int) id);
     }
     public int getSize(){return  channels.size();}
+
+    public void addChannel (Channel channel) {
+        channels.add (channel);
+    }
+
+    public void deleteChanelById (Long id) {
+        channels = channels.stream()
+                .filter (channel -> !channel.getId ().equals (id))
+                .collect (Collectors.toList ());
+    }
+
+    public void updateChannel (Channel channel) {
+        channels = channels.stream()
+                .filter (channel1 -> !channel1.getId ().equals (channel.getId ()))
+                .collect (Collectors.toList ());
+        channels.add (channel);
+    }
 
 }

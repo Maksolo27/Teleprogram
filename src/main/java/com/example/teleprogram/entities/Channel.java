@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Scope;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Scope("prototype")
 public class Channel {
 
     private Long id;

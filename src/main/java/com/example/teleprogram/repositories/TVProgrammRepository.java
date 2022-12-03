@@ -1,14 +1,16 @@
 package com.example.teleprogram.repositories;
 
+import com.example.teleprogram.entities.Channel;
 import com.example.teleprogram.entities.Teleprogram;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class TVProgrammRepository {
-    private final List<Teleprogram> programms = new ArrayList<>();
+    private List<Teleprogram> programms = new ArrayList<>();
 
 
     public TVProgrammRepository () {
@@ -25,5 +27,23 @@ public class TVProgrammRepository {
     }
 
     public int getSize(){return  programms.size();}
+
+
+    public void addTvProgram (Teleprogram teleprogram) {
+        programms.add (teleprogram);
+    }
+
+    public void deleteProgramById (Long id) {
+        programms = programms.stream()
+                .filter (channel -> !channel.getId ().equals (id))
+                .collect (Collectors.toList ());
+    }
+
+    public void updateProgram (Teleprogram teleprogram1) {
+        programms = programms.stream()
+                .filter (teleprogram -> !teleprogram.getId ().equals (teleprogram1.getId ()))
+                .collect (Collectors.toList ());
+        programms.add (teleprogram1);
+    }
 
 }

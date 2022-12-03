@@ -1,9 +1,6 @@
 package com.example.teleprogram.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Scope;
 
 @Data
 public class User {

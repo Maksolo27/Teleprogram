@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -17,7 +18,7 @@ public class ChannelService {
 
 
     public List<Channel> getAllChanels () {
-        return channelRepository.getAllChanels ();
+        return sortChanelsByNumber (channelRepository.getAllChanels ());
     }
 
     public Channel getChanelById(long id) {
@@ -25,5 +26,22 @@ public class ChannelService {
     }
 
     public int getSize(){return channelRepository.getSize();}
+
+    public void addChanel (Channel channel) {
+        channelRepository.addChannel (channel);
+    }
+
+    public void removeChannel (Long id) {
+        channelRepository.deleteChanelById (id);
+    }
+
+    public void updateChannel (Channel channel) {
+        channelRepository.updateChannel (channel);
+    }
+
+    private List<Channel> sortChanelsByNumber (List<Channel> channels) {
+        channels.sort (Comparator.comparing (Channel::getId));
+        return channels;
+    }
 
 }
