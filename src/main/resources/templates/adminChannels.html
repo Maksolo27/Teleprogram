@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style> body {background-color: navajowhite }
+  </style>
+</head>
+<body>
+<div th:each="channel: ${channels}">
+  <a th:href="@{/admchannels/{id}(id=${channel.getId()})}" th:text="${channel.getName()}">name </a>
+</div>
+<form action="newchannel">
+  <input type = "submit" value="Створити">
+</form>
+<form action="admin">
+  <input type = "submit" value="Назад">
+</form>
+</body>
+</html>

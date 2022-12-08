@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style> body {background-color: navajowhite }
+  </style>
+</head>
+<body>
+<tr th:text="${channel.getDescription()}"></tr>
+<form th:action="@{/admchannels/{id}/edit(id=${channel.getId()})}">
+  <input type = "submit" value="Редагувати">
+</form>
+
+<form th:method="DELETE" th:action="@{/admchannels/delete/{id}(id=${channel.getId()})}">
+  <input type = "submit" value="Видалити">
+</form>
+
+<form action="/admchannels">
+  <input type = "submit" value="Назад">
+</form>
+</body>
+</html>

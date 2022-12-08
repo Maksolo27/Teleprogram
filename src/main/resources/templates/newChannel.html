@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style> body {background-color: navajowhite }
+  </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{/admchannels}" th:object="${channel}">
+
+  <label for="name">Name</label>
+  <input type="text" th:field="*{name}" id="name"/>
+
+  <br>
+
+  <label for="description">Description</label>
+  <input type="text" th:field="*{description}" id="description"/>
+
+  <br>
+
+  <input type = "submit" value="Ok">
+</form>
+
+<form action="admchannels">
+  <input type = "submit" value="Назад">
+</form>
+</body>
+</html>

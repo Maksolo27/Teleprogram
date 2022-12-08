@@ -1,9 +1,10 @@
 package com.example.teleprogram.services;
 
 import com.example.teleprogram.entities.Channel;
+
 import com.example.teleprogram.repositories.ChannelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,5 +26,14 @@ public class ChannelService {
     }
 
     public int getSize(){return channelRepository.getSize();}
+
+    public void save(Channel channel){
+        channel.setId((long) channelRepository.getSize());
+        channelRepository.add(channel);
+    }
+
+    public void delete(int id){
+        channelRepository.delete(id);
+    }
 
 }

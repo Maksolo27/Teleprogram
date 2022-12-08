@@ -1,6 +1,7 @@
 package com.example.teleprogram.repositories;
 
 import com.example.teleprogram.entities.Channel;
+import com.example.teleprogram.entities.Teleprogram;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -28,4 +29,7 @@ public class ChannelRepository {
     }
     public int getSize(){return  channels.size();}
 
+    public void add(Channel channel){channels.add(channel);}
+
+    public void delete(int id){channels.removeIf(p->p.getId() == id);}
 }

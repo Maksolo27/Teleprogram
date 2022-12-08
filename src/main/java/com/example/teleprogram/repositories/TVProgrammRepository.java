@@ -14,6 +14,7 @@ public class TVProgrammRepository {
     public TVProgrammRepository () {
         programms.add (new Teleprogram (0,  "Четвер 07 грудня", "1. Футбол 1 - ФК ХарківГазВидобича - ДЮСШ 26|2. ICTV - Ментівські війни (цілий день)|3. СТБ - Вагітна у 16"));
         programms.add (new Teleprogram (1, "П'ятниця 08 грудня", "1. Футбол 1 - ФК ХарківГазВидобича - ДЮСШ 26 2 тайм|2. ICTV - Пес 2 серія 6 сезон|3. СТБ - Слідство ведуть екснтрасенси"));
+        programms.add (new Teleprogram (3, "Субота 09 грудня", "1. Футбол 1 - Ліга чемпіонів|2. ICTV - Обличчя зі шрамом|3. СТБ - Україна має талант 9 сезон"));
     }
 
     public List<Teleprogram> getAllProgram () {
