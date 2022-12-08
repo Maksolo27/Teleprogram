@@ -4,10 +4,8 @@ import com.example.teleprogram.repositories.TVProgrammRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+
+import java.util.*;
 
 @Service
 public class ViewerService {
@@ -37,9 +35,7 @@ public class ViewerService {
         for (int i = 0; i < tvProgrammRepository.getSize(); i++) {
             programms.add(tvProgrammRepository.getProgrammById(i).getDate());
             String [] descript = tvProgrammRepository.getProgrammById(i).getDescription().split("\n");
-            for (int j = 0; j < descript.length ; j++) {
-                programms.add(descript[j]);
-            }
+            programms.addAll(Arrays.asList(descript));
         }
         return programms;
     }
