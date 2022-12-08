@@ -1,7 +1,6 @@
 package com.example.teleprogram.services;
 import com.example.teleprogram.repositories.ChannelRepository;
 import com.example.teleprogram.repositories.TVProgrammRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

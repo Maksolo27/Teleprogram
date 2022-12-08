@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class TVProgrammService {
-    private TVProgrammRepository tvProgrammRepository;
+    private final TVProgrammRepository tvProgrammRepository;
     @Autowired
     public TVProgrammService(TVProgrammRepository tvProgrammRepository) {
         this.tvProgrammRepository = tvProgrammRepository;
