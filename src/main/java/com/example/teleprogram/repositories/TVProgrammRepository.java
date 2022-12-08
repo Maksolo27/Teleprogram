@@ -12,18 +12,23 @@ public class TVProgrammRepository {
 
 
     public TVProgrammRepository () {
-        programms.add (new Teleprogram (2L, "Телегазета", "Середа 02 листопада", "1. Футбол 1 - ФК ХарківГазВидобича - ДЮСШ 26" +"\n"+ "2. ICTV - Ментівські війни (цілий день)" +"\n"+ "3. СТБ - Вагітна у 16"));
-        programms.add (new Teleprogram (3L, "Телегазета", "Четвер 03 листопада", "1. Футбол 1 - ФК ХарківГазВидобича - ДЮСШ 26 2 тайм" +"\n"+ "2. ICTV - Пес 2 серія 6 сезон" +"\n"+ "3. СТБ - Слідство ведуть екснтрасенси"));
+        programms.add (new Teleprogram (0,  "Четвер 07 грудня", "1. Футбол 1 - ФК ХарківГазВидобича - ДЮСШ 26|2. ICTV - Ментівські війни (цілий день)|3. СТБ - Вагітна у 16"));
+        programms.add (new Teleprogram (1, "П'ятниця 08 грудня", "1. Футбол 1 - ФК ХарківГазВидобича - ДЮСШ 26 2 тайм|2. ICTV - Пес 2 серія 6 сезон|3. СТБ - Слідство ведуть екснтрасенси"));
     }
 
     public List<Teleprogram> getAllProgram () {
         return programms;
     }
 
-    public Teleprogram getProgrammById(long id) {
-        return programms.get ((int) id);
+    public Teleprogram getProgrammById(int id) {
+        return programms.get(Math.toIntExact(id));
     }
 
-    public int getSize(){return  programms.size();}
+
+    public int getSize(){return programms.size();}
+
+    public void add(Teleprogram teleprogram){programms.add(teleprogram);}
+
+    public void delete(int id){programms.removeIf(p->p.getId() == id);}
 
 }

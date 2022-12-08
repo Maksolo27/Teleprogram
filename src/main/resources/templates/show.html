@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style> body {background-color: navajowhite }
+    </style>
+</head>
+<body>
+<tr th:each="description: ${descriptions}">
+    <td th:text="${description}" />
+    <br>
+    <br>
+</tr>
+<form th:action="@{/{id}/edit(id=${program.getId()})}">
+    <input type = "submit" value="Редагувати">
+</form>
+
+<form th:method="DELETE" th:action="@{/admtvprogramm/{id}(id=${program.getId()})}">
+    <input type = "submit" value="Видалити">
+</form>
+
+<form action="/admtvprogramm">
+    <input type = "submit" value="Назад">
+</form>
+</body>
+</html>

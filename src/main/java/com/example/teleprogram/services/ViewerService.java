@@ -34,7 +34,7 @@ public class ViewerService {
         List<String> programms = new ArrayList<>();
         for (int i = 0; i < tvProgrammRepository.getSize(); i++) {
             programms.add(tvProgrammRepository.getProgrammById(i).getDate());
-            String [] descript = tvProgrammRepository.getProgrammById(i).getDescription().split("\n");
+            String [] descript = tvProgrammRepository.getProgrammById(i).getDescription().split("\\|");
             programms.addAll(Arrays.asList(descript));
         }
         return programms;

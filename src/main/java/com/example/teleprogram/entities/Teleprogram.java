@@ -10,9 +10,7 @@ import lombok.NoArgsConstructor;
 public class Teleprogram {
 
 
-    private Long id;
-
-    private String name;
+    private Integer id;
 
     private String date;
 

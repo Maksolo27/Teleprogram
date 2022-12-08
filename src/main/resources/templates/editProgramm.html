@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <style> body {background-color: navajowhite }
-  </style>
+    <style> body {background-color: navajowhite }
+    </style>
 </head>
 <body>
-<form action="admtvprogramm">
-    <input name = "descript"/>
-    <br>
-    <input type = "submit" value="set">
+<form th:method="PATCH" th:action="@{/edit/{id}(id=${programm.getId()})}" th:object="${programm}">
+
+  <label for="date">Date</label>
+  <input type="text" th:field="*{date}" id="date"/>
+
+  <br>
+
+  <label for="description">Description</label>
+  <input type="text" th:field="*{description}" id="description"/>
+
+  <br>
+
+  <input type = "submit" value="Ok">
+</form>
+
+<form action="/admtvprogramm">
+  <input type = "submit" value="Назад">
 </form>
 </body>
 </html>

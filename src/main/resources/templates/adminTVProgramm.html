@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,12 +7,11 @@
   </style>
 </head>
 <body>
-<tr th:each="program: ${programm}">
-    <td th:text="${program}" />
-    <br>
-</tr>
-<form action="day">
-    <input type = "submit" value="Редагувати">
+<div th:each="program: ${programm}">
+    <a th:href="@{/admtvprogramm/{id}(id=${program.getId()})}" th:text="${program.getDate()}">date </a>
+</div>
+<form action="new">
+    <input type = "submit" value="Створити">
 </form>
 <form action="admin">
   <input type = "submit" value="Назад">

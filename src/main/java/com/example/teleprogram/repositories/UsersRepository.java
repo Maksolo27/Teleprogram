@@ -16,8 +16,8 @@ public class UsersRepository {
         users.add (new User(1,"admin", "321", "admin"));
     }
 
-    public User getUserById(long id) {
-        return users.get ((int) id);
+    public User getUserById(int id) {
+        return users.get (id);
     }
 
     public int getSize(){

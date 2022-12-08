@@ -17,11 +17,19 @@ public class TVProgrammService {
 
     public List<Teleprogram> getAllProgram () {return tvProgrammRepository.getAllProgram();}
 
-    public Teleprogram getProgrammById(long id) {
+    public Teleprogram getProgrammById(int id) {
         return tvProgrammRepository.getProgrammById(id);
     }
 
     public int getSize(){return tvProgrammRepository.getSize();}
 
+    public void save(Teleprogram teleprogram){
+        teleprogram.setId(tvProgrammRepository.getSize());
+        tvProgrammRepository.add(teleprogram);
+    }
+
+    public void delete(int id){
+        tvProgrammRepository.delete(id);
+    }
 
 }
