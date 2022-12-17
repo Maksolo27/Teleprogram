@@ -25,12 +25,14 @@ public class ChannelController {
 
     @GetMapping
     @ApiOperation (value = "Get list of channels (sorted by numbers)",
+            code = 200,
             tags = {SwaggerConfig.TAG_CHANNEL}
     )
     public ResponseEntity<List<Channel>> getChannelList () {
         return ResponseEntity.ok (channelService.getAllChanels ());
     }
     @ApiOperation (value = "Create new channel",
+            code = 200,
             tags = {SwaggerConfig.TAG_CHANNEL}
     )
     @PutMapping("/create")
@@ -40,6 +42,7 @@ public class ChannelController {
 
     @DeleteMapping("/remove")
     @ApiOperation (value = "Remove channel",
+            code = 200,
             tags = {SwaggerConfig.TAG_CHANNEL})
     public void removeChannel (@RequestParam Long id) {
         channelService.getChanelById (id);
@@ -47,6 +50,7 @@ public class ChannelController {
 
     @PostMapping("/update")
     @ApiOperation (value = "Update channel",
+            code = 200,
             tags = {SwaggerConfig.TAG_CHANNEL})
     public void updateChannel (@RequestBody Channel channel) {
         channelService.updateChannel (channel);

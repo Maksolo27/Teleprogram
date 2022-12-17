@@ -26,6 +26,7 @@ public class TeleprogramController {
 
     @GetMapping
     @ApiOperation (value = "Get list of teleprograms",
+            code = 200,
             tags = {SwaggerConfig.TAG_TELEPROGRAM})
     public ResponseEntity<List<Teleprogram>> getTeleprogramlList () {
         return ResponseEntity.ok (tvProgrammService.getAllProgram ());
@@ -33,6 +34,7 @@ public class TeleprogramController {
 
     @PutMapping ("/create")
     @ApiOperation (value = "Add new teleprogram",
+            code = 200,
             tags = {SwaggerConfig.TAG_TELEPROGRAM})
     public void putTeleprogram (@RequestBody Teleprogram teleprogram) {
         tvProgrammService.add (teleprogram);
@@ -40,6 +42,7 @@ public class TeleprogramController {
 
     @DeleteMapping ("/remove")
     @ApiOperation (value = "Remove teleprogram",
+            code = 200,
             tags = {SwaggerConfig.TAG_TELEPROGRAM})
     public void removeTeleprogram (@RequestParam Long id) {
         tvProgrammService.remove (id);
@@ -47,6 +50,7 @@ public class TeleprogramController {
 
     @PostMapping("/update")
     @ApiOperation (value = "Update teleprogram",
+            code = 200,
             tags = {SwaggerConfig.TAG_TELEPROGRAM})
     public void updateTeleprogram (@RequestBody Teleprogram teleprogram) {
         tvProgrammService.update (teleprogram);
