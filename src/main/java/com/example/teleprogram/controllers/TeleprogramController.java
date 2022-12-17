@@ -32,7 +32,7 @@ public class TeleprogramController {
         return ResponseEntity.ok (tvProgrammService.getAllProgram ());
     }
 
-    @PutMapping ("/create")
+    @PostMapping ("/create")
     @ApiOperation (value = "Add new teleprogram",
             code = 200,
             tags = {SwaggerConfig.TAG_TELEPROGRAM})
@@ -48,7 +48,7 @@ public class TeleprogramController {
         tvProgrammService.remove (id);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ApiOperation (value = "Update teleprogram",
             code = 200,
             tags = {SwaggerConfig.TAG_TELEPROGRAM})

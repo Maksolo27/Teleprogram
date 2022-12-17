@@ -35,7 +35,7 @@ public class ChannelController {
             code = 200,
             tags = {SwaggerConfig.TAG_CHANNEL}
     )
-    @PutMapping("/create")
+    @PostMapping("/create")
     public void putChannel (@RequestBody Channel channel) {
         channelService.addChanel (channel);
     }
@@ -48,7 +48,7 @@ public class ChannelController {
         channelService.getChanelById (id);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ApiOperation (value = "Update channel",
             code = 200,
             tags = {SwaggerConfig.TAG_CHANNEL})
